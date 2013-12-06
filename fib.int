@@ -1,0 +1,25 @@
+main(target) {
+   if target < 1 {
+      return -1; 
+   }
+   result = fib(target);
+   return result;
+}
+
+fib(target) {
+   if target == 1 {
+      return 0; 
+   }
+
+   prev = 0;
+   cur = 1;
+   target = target - 2;
+   while target {
+      tmp = cur;
+      cur = cur + prev;
+      prev = tmp;
+      target = target - 1;
+   }
+   return cur;
+}
+

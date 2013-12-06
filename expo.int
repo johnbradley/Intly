@@ -1,0 +1,8 @@
+main(value, exp) {
+   total = 1;
+   while exp {
+      total = total * value;
+      exp = exp - 1;
+   }
+   return total;
+}
