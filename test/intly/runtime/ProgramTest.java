@@ -1,5 +1,7 @@
 package intly.runtime;
 
+import java.util.List;
+import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -21,7 +23,7 @@ public class ProgramTest {
     }
     
     private void addFunc(String name, Block block) {
-        prog.addFunction(new Function(name, block));
+        prog.addFunction(new Function(name, block, new ArrayList<String>()));
     }
     
     private int runMain() {
@@ -58,7 +60,7 @@ public class ProgramTest {
         other.addReturnValue(5);
         addFunc("other", other);
         
-        mainBlock.addStatement(new ReturnStatement(new FuncExpr("other")));
+        mainBlock.addStatement(new ReturnStatement(new FuncExpr("other", new ArrayList<IntOrVar>())));
         
         int result = runMain();
         assertEquals(5, result);

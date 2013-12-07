@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<project name="Intly" default="dist" basedir=".">
+  <description>integer oriented programming language</description>
+  <property name="src" location="src"/>
+  <property name="build" location="build"/>
+  <property name="dist" location="dist"/>
+
+  <path id="libclasspath">
+      <fileset dir="lib" includes="**/*.jar"/>
+  </path>
+
+  <path id="junit.class.path">
+      <pathelement location="lib/hamcrest-core-1.3.jar" />
+      <pathelement location="lib/junit-4.11.jar" />
+      <pathelement location="build" />
+  </path>
+
+  <target name="init">
+    <tstamp/>
+    <mkdir dir="${build}"/>
+  </target>
+
+  <target name="compile" depends="init" description="compile the source ">
+    <javac includeantruntime="false" srcdir="${src}" destdir="${build}" >
+        <classpath>
+            <path refid="libclasspath" />
+        </classpath>
+    </javac>
+    <javac includeantruntime="false" srcdir="test" destdir="${build}" >
+        <classpath>
+            <path refid="libclasspath" />
+        </classpath>
+    </javac>
+  </target>
+
+  <target name="dist" depends="compile" description="generate the distribution">
+    <mkdir dir="${dist}"/>
+    <jar jarfile="${dist}/Intly.jar" basedir="${build}">
+      <manifest>
+        <attribute name="Main-Class" value="intly.Intly"/>
+      </manifest>
+      <zipgroupfileset dir="lib/">
+        <include name="**/*.jar"/>
+      </zipgroupfileset>
+    </jar>
+  </target>
+
+  <target name="clean" description="clean up">
+    <!-- Delete the ${build} and ${dist} directory trees -->
+    <delete dir="${build}"/>
+    <delete dir="${dist}"/>
+  </target>
+
+  <target name="test" depends="compile">
+    <junit printsummary="on" fork="true" haltonfailure="yes" >
+      <classpath refid="libclasspath" />
+      <classpath location="build" />
+      <formatter type="plain" usefile="false" />
+      <batchtest>
+          <fileset dir="test" > 
+              <include name="**/*Test.java" />
+          </fileset>
+      </batchtest>
+    </junit>
+  </target>
+
+</project>
