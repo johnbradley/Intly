@@ -17,7 +17,7 @@ public class WhileStatement implements Statement {
     }
     
     @Override
-    public void run(Args args, Program program) {
+    public void run(Vars args, Program program) {
         while(expr.run(args, program) != 0) {
             block.run(args, program);
         }

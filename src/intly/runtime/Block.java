@@ -26,7 +26,7 @@ public class Block {
         addStatement(new Assignment(name, ValueExpr.createValue(value)));
     }      
     
-    public void run(Args args, Program program) {
+    public void run(Vars args, Program program) {
         for(Statement statement : statements) {
             statement.run(args, program);
             if(args.didExit()) {

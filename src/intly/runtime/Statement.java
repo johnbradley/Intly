@@ -6,7 +6,7 @@ package intly.runtime;
  */
 public interface Statement {
 
-    void run(Args args, Program program);
+    void run(Vars args, Program program);
 
     void prettyPrint(StringBuilder sb, String prefix);
     

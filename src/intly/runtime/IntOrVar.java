@@ -20,7 +20,7 @@ public class IntOrVar {
         return new IntOrVar(null, name);
     }    
 
-    int getValue(Args args) {
+    int getValue(Vars args) {
         if(intVal != null) {
             return intVal;
         }

@@ -48,10 +48,12 @@ public class ProgramBuilder extends IntlyBaseListener {
     public void exitFdecl(IntlyParser.FdeclContext ctx) {
         String funcName = ctx.Name().getText();
         IntlyParser.FparamsContext fparams = ctx.fparams();
-        List<TerminalNode> paramNodes = fparams.Name();
         List<String> paramNames = new ArrayList<>();
-        for(TerminalNode tn : paramNodes) {
-            paramNames.add(tn.getText());
+        if(fparams != null) {
+            List<TerminalNode> paramNodes = fparams.Name();
+            for(TerminalNode tn : paramNodes) {
+                paramNames.add(tn.getText());
+            }
         }
         Block finishedBlock = blockStack.pop();
         prog.addFunction(new Function(funcName, finishedBlock, paramNames));

@@ -21,7 +21,7 @@ public class Program {
         functions.put(name, func);
     }
     
-    public int runFunction(String name, Args args) {
+    public int runFunction(String name, Vars args) {
         Function func = functions.get(name);
         if(func == null) {
             throw new LanguageException("Missing function named:" + name);

@@ -26,7 +26,7 @@ public class MathExpr implements Expr {
     }
 
     @Override
-    public int run(Args args, Program program) {
+    public int run(Vars args, Program program) {
         int value1 = expr1.run(args, program);
         int value2 = expr2.run(args, program);
         return calc(value1, value2);

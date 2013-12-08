@@ -16,8 +16,8 @@ public class FuncExpr implements Expr {
     }
     
     @Override
-    public int run(Args args, Program program) {
-        Args newArgs = new Args();
+    public int run(Vars args, Program program) {
+        Vars newArgs = new Vars();
         Function func = program.functions.get(funcName);
         List<String> paramNames = func.getParamNames();
         for(int i = 0; i < paramNames.size(); i++) {

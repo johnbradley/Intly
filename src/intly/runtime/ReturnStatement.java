@@ -14,7 +14,7 @@ public class ReturnStatement implements Statement {
     }
     
     @Override
-    public void run(Args args, Program program) {
+    public void run(Vars args, Program program) {
         args.setReturn(expr.run(args, program));
     }
     

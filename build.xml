@@ -51,6 +51,17 @@
     <delete dir="${dist}"/>
   </target>
 
+  <target name="parser" >
+      <java jar="lib/antlr-4.1-complete.jar" fork="true" >
+         <arg line="-o" />
+         <arg line="src/intly/parser" />
+         <arg line="-package" />
+         <arg line="intly.parser" />
+         <arg line="Intly.g4" />
+      </java>
+      <!--  antlr4 -visitor -package intly.parser Intly.g4 -->
+  </target>
+
   <target name="test" depends="compile">
     <junit printsummary="on" fork="true" haltonfailure="yes" >
       <classpath refid="libclasspath" />

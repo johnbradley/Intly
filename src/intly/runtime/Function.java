@@ -25,7 +25,7 @@ public class Function {
         return paramNames;
     }
     
-    public int run(Args args, Program program) {
+    public int run(Vars args, Program program) {
         block.run(args, program);
         return args.getResult();
     }

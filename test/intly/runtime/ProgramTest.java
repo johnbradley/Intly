@@ -1,6 +1,5 @@
 package intly.runtime;
 
-import java.util.List;
 import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,13 +11,13 @@ import static org.junit.Assert.*;
  */
 public class ProgramTest {
     private Program prog;
-    private Args args;
+    private Vars args;
     private Block mainBlock;
     
     @Before
     public void setup() {
         prog = new Program();
-        args = new Args();
+        args = new Vars();
         mainBlock = new Block();
     }
     

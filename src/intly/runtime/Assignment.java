@@ -16,7 +16,7 @@ public class Assignment implements Statement {
     }
  
     @Override
-    public void run(Args args, Program program) {
+    public void run(Vars args, Program program) {
         int value = expr.run(args, program);
         args.set(name, value);
     }

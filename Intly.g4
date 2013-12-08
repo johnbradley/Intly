@@ -19,8 +19,6 @@ statement
  | 'while' expr '{' statement+ '}' #while  
  ;
 
-
-
 expr
  : (var | integer)      #valueExpr
  | expr '*' expr        #multExpr
@@ -62,6 +60,6 @@ Lt : '<';
 Gt : '>';
 Le : '<=';
 Ge : '>=';
-Name : [A-Za-z_]+;
+Name : [A-Za-z_][A-Za-z_0-9]*;
 Int : '-'?[0-9]+;
 WS : [ \n\r\t] -> skip;
