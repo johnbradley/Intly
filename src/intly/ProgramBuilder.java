@@ -31,7 +31,7 @@ public class ProgramBuilder extends IntlyBaseListener {
     private final Program prog = new Program();
     /** top of the stack of blocks that are currently being built */
     private final Deque<Block> blockStack = new LinkedList<>();
-    /** top of the stack of blocks that are currently being built */
+    /** top of the stack of expressions that are currently being built */
     private final Deque<Expr> exprStack = new LinkedList<>();
 
     public Program getProg() {
