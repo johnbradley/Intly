@@ -38,3 +38,7 @@ fib(target) {
    return cur;
 }
 ```
+
+[Under The Hood] [1]
+
+[1]: https://github.com/johnbradley/Intly/blob/master/Notes.md            "Notes"
