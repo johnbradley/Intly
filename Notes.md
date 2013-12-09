@@ -18,4 +18,4 @@ The lex/parser can be regenerated via `ant parser`.
 [3]: https://github.com/johnbradley/Intly/tree/master/src/intly/runtime   "Runtime Source"
 [4]: https://github.com/johnbradley/Intly/tree/master/src/intly/parser    "Lex/Parser Source"
 [5]: https://github.com/johnbradley/Intly/tree/master/fib.int             "Fibonacci calculator intly source"
-[6]: https://github.com/johnbradley/Intly/tree/master/src/intl/ProgramBuilder.java  "Program builder source"
+[6]: https://github.com/johnbradley/Intly/blob/master/src/intly/ProgramBuilder.java  "Program builder source"
